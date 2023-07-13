@@ -1,0 +1,16 @@
+﻿@model Pizzapan.EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Kategori Güncelleme Sayfası</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="CategoryID"/>
+
+    <label>Kategori Güncelleme</label>
+    <input type="text" asp-for="CategoryName" class="form-control" style="background-color : #dedee5" />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
