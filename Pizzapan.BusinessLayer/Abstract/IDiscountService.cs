@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pizzapan.BusinessLayer.Abstract
 {
-    public interface IContactService : IGenericService<Contact>
+    public interface IDiscountService : IGenericService<Discount>
     {
-        List<Contact> TGetContactBySubjectWithTesekkur();
     }
 }

@@ -1,0 +1,40 @@
+﻿@model List<Discount>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string color = "";
+    int count = 0;
+}
+
+<h1>Kupon Kodu Listesi</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kupon Kodu</th>
+        <th>Kişi Sayısı</th>
+        <th>Başlangıç Tarihi</th>
+        <th>Bitiş Tarihi</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        if(item.DiscountEnd < DateTime.Now)
+        {
+            color = "background-color:red";
+        }
+
+        if (item.DiscountEnd > DateTime.Now)
+        {
+            color = "background-color:green";
+        }
+        count++;
+        <tr style="@color">
+            <td>@count</td>
+            <td>@item.DiscountCod</td>
+            <td>@item.DiscountCount</td>
+            <td>@(((DateTime)item.DiscountStart).ToString("dd-MM-yyyy"))</td>
+            <td>@(((DateTime)item.DiscountEnd).ToString("dd-MM-yyyy"))</td>
+        </tr>
+    }
+</table>
+<a href="/Discount/CreateCode" class="btn btn-success">Yeni Kupon Oluştur</a>
+

@@ -1,0 +1,32 @@
+﻿@model List<Contact>
+@{
+    ViewData["Title"] = "GetMessageByTesekkur";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h1>Teşekkür Mesajları</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Gönderen</th>
+        <th>Konu</th>
+        <th>Tarih</th>
+        <th>Mesajı Sil</th>
+        <th>Mesajı Gör</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Name</td>
+            <td>@item.Subject</td>
+            <td>@(((DateTime)item.SendDateMessage).ToString("dd-MM-yyyy"))</td>
+            <td><a class="btn btn-danger" href="/Contact/DeleteContact/@item.ContactID">Mesajı Sil</a></td>
+            <td><a class="btn btn-info" href="/Contact/MessageDetailsContact/@item.ContactID">Mesajı Gör</a></td>
+        </tr>
+    }
+</table>
+
+

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Pizzapan.DataAccessLayer.EntityFramework
 {
-    public class EfTestimonialDal : GenericRepository<Testimonial>, ITestimonialDal
+    public class EfDiscountDal : GenericRepository<Discount>, IDiscountDal
     {
     }
 }

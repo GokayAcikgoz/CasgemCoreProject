@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pizzapan.BusinessLayer.Abstract
+namespace Pizzapan.DataAccessLayer.Abstract
 {
-    public interface IContactService : IGenericService<Contact>
+    public interface IDiscountDal : IGenericDal<Discount>
     {
-        List<Contact> TGetContactBySubjectWithTesekkur();
     }
 }

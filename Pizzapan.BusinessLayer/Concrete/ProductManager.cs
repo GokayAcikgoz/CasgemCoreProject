@@ -33,6 +33,11 @@ namespace Pizzapan.BusinessLayer.Concrete
             return _productDal.GetList();
         }
 
+        public List<Product> TGetProductsWithCategory()
+        {
+            return _productDal.GetProductsWithCategory();
+        }
+
         public void TInsret(Product t)
         {
             _productDal.Insret(t);
