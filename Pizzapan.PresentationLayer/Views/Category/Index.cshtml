@@ -8,19 +8,19 @@
 <h1>Kategori Listesi</h1>
 <table class ="table table-bordered">
     <tr>
-        <td>#</td>
-        <td>Kategori Adı</td>
-        <td>Kategori Ürünleri</td>
-        <td>Sitede Gör</td>
-        <td>Sil</td>
-        <td>Güncelle</td>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th>Kategori Ürünleri</th>
+        <th>Sitede Gör</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
 
     @foreach(var item in Model)
     {
         <tr>
             <td>@item.CategoryID</td>
-            <td>@item.Products</td>
+            <td>@item.CategoryName</td>
             <td><a href="#" class="btn btn-outline-info">Kategori Ürünleri</a></td>
             <td><a href="#" class="btn btn-outline-warning">Sitede Gör</a></td>
             <td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-outline-danger">Sil</a></td>
