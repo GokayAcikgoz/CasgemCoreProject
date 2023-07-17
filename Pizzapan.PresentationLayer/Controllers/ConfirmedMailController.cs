@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Pizzapan.EntityLayer.Concrete;
 using Pizzapan.PresentationLayer.Models;
+using System.Threading.Tasks;
 
 namespace Pizzapan.PresentationLayer.Controllers
 {
@@ -22,15 +23,15 @@ namespace Pizzapan.PresentationLayer.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string id)
+        public async Task<IActionResult> Index(string id)
         {
-            var appUser = _userManager.FindByIdAsync(id).Result;
+            var appUser = await _userManager.FindByIdAsync(id);
 
             if (appUser != null && appUser.ConfirmCode == appUser.ConfirmCode)
             {
                 
                 appUser.EmailConfirmed = true;
-                _userManager.UpdateAsync(appUser).Wait();
+                await _userManager.UpdateAsync(appUser);
 
                 return RedirectToAction("Index", "Login");
             }
