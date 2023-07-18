@@ -62,6 +62,7 @@ namespace Pizzapan.PresentationLayer.Controllers
                 smtpClient.Disconnect(true);
                 #endregion
 
+
                 var result = await _userManager.CreateAsync(appUser, model.Password);
                 
 

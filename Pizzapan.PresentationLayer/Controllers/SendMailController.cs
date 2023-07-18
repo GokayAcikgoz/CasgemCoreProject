@@ -1,21 +1,26 @@
 ﻿using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
+using NETCore.MailKit.Core;
 using Pizzapan.PresentationLayer.Models;
 
 namespace Pizzapan.PresentationLayer.Controllers
 {
     public class SendMailController : Controller
     {
+       
         [HttpGet]
         public IActionResult Index()
         {
+            
+
             return View();
         }
 
         [HttpPost]
         public IActionResult Index(MailRequest mailRequest)
         {
+
             MimeMessage mimeMessage = new MimeMessage();
             MailboxAddress mailboxAddress = new MailboxAddress("Admin", "gokayacikgoz1@gmail.com");
             mimeMessage.From.Add(mailboxAddress);
@@ -34,7 +39,10 @@ namespace Pizzapan.PresentationLayer.Controllers
             smtpClient.Authenticate("gokayacikgoz1@gmail.com", "hvxeivfulpbtwfer");
             smtpClient.Disconnect(true);
 
+
+
             return View();
         }
+
     }
 }
