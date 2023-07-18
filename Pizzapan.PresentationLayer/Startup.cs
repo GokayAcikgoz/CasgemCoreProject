@@ -49,6 +49,9 @@ namespace Pizzapan.PresentationLayer
             services.AddScoped<IProductImageService, ProductImageManager>();
             services.AddScoped<IProductImageDal, EfProductImageDal>();
 
+            services.AddScoped<IOurTeamService, OurTeamManager>();
+            services.AddScoped<IOurTeamDal, EfOurTeamDal>();
+
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>
                 ().AddErrorDescriber<CustomIdentityValidator>();
             services.AddControllersWithViews();
