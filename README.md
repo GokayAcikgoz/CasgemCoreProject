@@ -1,13 +1,13 @@
-#CasgemCoreProject
-##Asp .Net Core 5.0 N Tier Architecture 
-<p>Identity </p>
-<p>Email verfication </p>
-<p>Repository Design Pattern </p>
-<p>Code First </p>
-<p>Linq </p>
-<p>IFormFile </p>
+# CasgemCoreProject
+## Asp .Net Core 5.0 N Tier Architecture 
+<p>- Identity </p>
+<p>- Email verfication </p>
+<p>- Repository Design Pattern </p>
+<p>- Code First </p>
+<p>- Linq </p>
+<p>- IFormFile </p>
 
-#Images
+# Images
 ![1](https://github.com/GokayAcikgoz/CasgemCoreProject/assets/57223178/cf034be7-2995-472f-abb5-ec2e2cd7a1fc)
 ![2](https://github.com/GokayAcikgoz/CasgemCoreProject/assets/57223178/cb09d6c0-aab2-446c-b589-befb2844ed66)
 ![3](https://github.com/GokayAcikgoz/CasgemCoreProject/assets/57223178/b23d0b5a-e8fd-485a-8148-3f9995b57ab2)
