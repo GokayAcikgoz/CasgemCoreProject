@@ -5,9 +5,11 @@ using System.IO;
 using System;
 using System.Threading.Tasks;
 using Pizzapan.PresentationLayer.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Pizzapan.PresentationLayer.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
@@ -54,7 +56,7 @@ namespace Pizzapan.PresentationLayer.Controllers
         {
             var value = _productService.TGetById(id);
             _productService.TDelete(value);
-            return View(value);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]

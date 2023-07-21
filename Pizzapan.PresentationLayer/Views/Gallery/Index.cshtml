@@ -1,0 +1,66 @@
+﻿@model List<Pizzapan.EntityLayer.Concrete.Gallery>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <style>
+        .gallery-item {
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+        }
+
+            .gallery-item img {
+                width: 200px;
+                height: 150px;
+                cursor: pointer;
+            }
+
+        .delete-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        }
+    </style>
+</head>
+<body>
+    <h1>Galeri Listesi</h1>
+    <a href="/Gallery/AddGallery" class="btn btn-info">Yeni Resim Ekle</a>
+    <div class="gallery">
+        @foreach(var item in Model)
+        {
+            <div class="gallery-item">
+                <a href="~/images/@item.ImageUrl" data-fancybox="gallery" data-caption="@item.Title">
+                    <img src="~/images/@item.ImageUrl" alt="Resim 2">
+                </a>
+                <a href="/Gallery/DeleteGallery/@item.GalleryID" class="delete-button">Sil</a>
+                
+            </div>
+        }
+       
+        <!-- Diğer resimler burada eklenebilir -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script>
+        function deleteImage(button) {
+            var galleryItem = button.parentNode;
+            galleryItem.remove();
+        }
+    </script>
+</body>
+</html>

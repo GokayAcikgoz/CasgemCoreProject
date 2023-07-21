@@ -35,7 +35,30 @@
             <div class="container">
                 <div class="d-grid align-form-map">
 
-                    @await Html.PartialAsync("Index", "Message")
+                    <div class="form-inner-cont">
+                        <form action="/Contact/AddMessage" method="post" class="signin-form">
+                            <div class="form-input">
+                                <label for="w3lName">Ad Soyad</label>
+                                <input type="text" name="Name" placeholder="" />
+                            </div>
+                            <div class="form-input">
+                                <label for="w3lSender">Email</label>
+                                <input type="email" name="Email" placeholder="" required="" />
+                            </div>
+                            <div class="form-input">
+                                <label for="w3lMessage">Konu</label>
+                                <input type="text" name="Subject" placeholder="" required="" />
+                            </div>
+                            <div class="form-input">
+                                <label for="w3lMessage">Mesaj</label>
+                                <textarea placeholder="" name="Message" required=""></textarea>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-style btn-primary">Gönder</button>
+
+                        </form>
+                    </div>
 
                     <div class="map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47841.35317520742!2d31.75896090450716!3d41.45908097556843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c7c43e91296e7%3A0x24080dea6d843794!2sZonguldak%2C%20Zonguldak%20Merkez%2FZonguldak!5e0!3m2!1sen!2str!4v1689937681345!5m2!1sen!2str"

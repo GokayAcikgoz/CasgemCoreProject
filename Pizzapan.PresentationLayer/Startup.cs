@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -61,13 +62,25 @@ namespace Pizzapan.PresentationLayer
             services.AddScoped<IGalleryService, GalleryManager>();
             services.AddScoped<IGalleryDal, EfGalleryDal>();
 
-            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>
+			services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+			.AddCookie(options =>
+			{
+				options.LoginPath = "/Login/Index"; // Giriþ yapýlacak URL'yi belirtin
+			});
+
+			services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>
                 ().AddErrorDescriber<CustomIdentityValidator>();
-            services.AddControllersWithViews();
+
+			
+
+
+			services.AddControllersWithViews();
+
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+
+		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -87,6 +100,8 @@ namespace Pizzapan.PresentationLayer
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            
 
             app.UseEndpoints(endpoints =>
             {

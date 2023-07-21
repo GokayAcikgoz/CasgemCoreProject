@@ -1,0 +1,22 @@
+﻿@model List<Pizzapan.EntityLayer.Concrete.ContactUs>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Hakkımda-İletişim sayfası</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Başlık</th>
+        <th>Güncelle</th>
+    </tr>
+    
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td><a href="/ContactUs/UpdateContactUs/@item.ContactUsID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+

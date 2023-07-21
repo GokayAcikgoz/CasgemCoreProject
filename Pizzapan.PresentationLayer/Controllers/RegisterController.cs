@@ -58,8 +58,9 @@ namespace Pizzapan.PresentationLayer.Controllers
 
                 SmtpClient smtpClient = new SmtpClient();
                 smtpClient.Connect("smtp.gmail.com", 587, false);
-                smtpClient.Authenticate("gokayacikgoz1@gmail.com", "hvxeivfulpbtwfer");
-                smtpClient.Disconnect(true);
+                smtpClient.Authenticate("gokayacikgoz1@gmail.com", "ntaqohvgomyaebji");
+				smtpClient.Send(mimeMessage);
+				smtpClient.Disconnect(true);
                 #endregion
 
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Pizzapan.EntityLayer.Concrete;
 using Pizzapan.PresentationLayer.Models;
@@ -49,6 +50,15 @@ namespace Pizzapan.PresentationLayer.Controllers
             {
                 return View();
             }
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            // Kullanıcının oturumunu sonlandır
+            await HttpContext.SignOutAsync();
+
+            // Ana sayfaya yönlendir
+            return RedirectToAction("Index", "Login");
         }
 
 

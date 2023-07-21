@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using Pizzapan.BusinessLayer.Abstract;
 using Pizzapan.EntityLayer.Concrete;
+using System.Threading.Tasks;
 
 namespace Pizzapan.PresentationLayer.ViewComponents.Contact
 {
@@ -25,7 +26,7 @@ namespace Pizzapan.PresentationLayer.ViewComponents.Contact
             ViewBag.date = value.StartEndDate;
             ViewBag.mail = value.Mail;
             
-            return View("Message");
+            return View();
         }
 
         

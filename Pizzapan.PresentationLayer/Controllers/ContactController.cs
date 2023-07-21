@@ -36,5 +36,13 @@ namespace Pizzapan.PresentationLayer.Controllers
             return View(values);
         }
 
+        public IActionResult AddMessage(Contact p)
+        {
+            _contactService.TInsret(p);
+            p.SendDateMessage = DateTime.Parse(DateTime.Now.ToString("dd-MM-yyyy"));
+
+            return RedirectToAction("Index", "Default");
+        }
+
     }
 }

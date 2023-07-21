@@ -1,0 +1,16 @@
+﻿@model GalleryViewModel
+@{
+    ViewData["Title"] = "AddGallery";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Resim Ekleme Sayfa</h1>
+<form method="post" enctype="multipart/form-data">
+    <label>Başlık</label>
+    <input type="text" class="form-control border" asp-for="Title" />
+    <br />
+    <label>Görsel Seçiniz</label>
+    <input type="file" class="form-control border" asp-for="Image" />
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+</form>
