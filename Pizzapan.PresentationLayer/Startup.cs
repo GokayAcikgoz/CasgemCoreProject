@@ -52,6 +52,15 @@ namespace Pizzapan.PresentationLayer
             services.AddScoped<IOurTeamService, OurTeamManager>();
             services.AddScoped<IOurTeamDal, EfOurTeamDal>();
 
+            services.AddScoped<IContactUsService, ContactUsManager>();
+            services.AddScoped<IContactUsDal, EfContactUsDal>();
+
+            services.AddScoped<ISocialMediService, SocialMediaManager>();
+            services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+
+            services.AddScoped<IGalleryService, GalleryManager>();
+            services.AddScoped<IGalleryDal, EfGalleryDal>();
+
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>
                 ().AddErrorDescriber<CustomIdentityValidator>();
             services.AddControllersWithViews();

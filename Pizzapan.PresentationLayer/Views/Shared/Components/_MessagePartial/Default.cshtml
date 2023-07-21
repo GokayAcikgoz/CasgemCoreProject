@@ -1,0 +1,49 @@
+﻿@model Pizzapan.EntityLayer.Concrete.Contact
+
+<section class="w3l-contact-11 py-5">
+    <div class="contacts-main py-lg-5 py-md-4">
+        <div class="contant11-top-bg">
+            <div class="container">
+                <div class="title-content text-center">
+                    <h6 class="sub-title">İletişim</h6>
+                    <h3 class="title-big">Bize Ulaşın</h3>
+                </div>
+                <div class="d-grid contact section-gap mt-lg-5 mt-4">
+                    <div class="contact-info-left d-grid text-center">
+                        <div class="contact-info">
+                            <span class="fa fa-map-marker" aria-hidden="true"></span>
+                            <h4>Adres</h4>
+                            <p>@ViewBag.address</p>
+                        </div>
+                        <div class="contact-info">
+                            <span class="fa fa-phone" aria-hidden="true"></span>
+                            <h4>İletişim</h4>
+                            <p><a href="tel: @ViewBag.phone">@ViewBag.phone</a></p>
+                            <p><a href="mailto:@ViewBag.mail" class="email">@ViewBag.mail</a></p>
+                        </div>
+                        <div class="contact-info">
+                            <span class="fa fa-clock-o" aria-hidden="true"></span>
+                            <h4>Çalışma Saatlerimiz</h4>
+                            
+                            <p> @ViewBag.date</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-41-mian section-gap mt-5">
+            <div class="container">
+                <div class="d-grid align-form-map">
+
+                    @await Html.PartialAsync("Index", "Message")
+
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47841.35317520742!2d31.75896090450716!3d41.45908097556843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c7c43e91296e7%3A0x24080dea6d843794!2sZonguldak%2C%20Zonguldak%20Merkez%2FZonguldak!5e0!3m2!1sen!2str!4v1689937681345!5m2!1sen!2str"
+                                frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+

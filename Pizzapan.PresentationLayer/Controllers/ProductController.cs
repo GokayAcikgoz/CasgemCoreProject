@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Pizzapan.BusinessLayer.Abstract;
 using Pizzapan.EntityLayer.Concrete;
+using System.IO;
+using System;
+using System.Threading.Tasks;
+using Pizzapan.PresentationLayer.Models;
 
 namespace Pizzapan.PresentationLayer.Controllers
 {
@@ -27,9 +31,22 @@ namespace Pizzapan.PresentationLayer.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProduct(Product product)
+        public async Task<IActionResult> AddProduct(ImageFileViewModel model)
         {
+            var resource = Directory.GetCurrentDirectory();
+            var extension = Path.GetExtension(model.Image.FileName);
+            var imageName = Guid.NewGuid() + extension; //guid benzersiz 32 hanelik bir isim
+            var saveLocation = resource + "/wwwroot/images/" + imageName;
+            var stream = new FileStream(saveLocation, FileMode.Create);
+            model.Image.CopyTo(stream);
+            Product product = new Product();
+            product.Name = model.Name;
+            product.Description = model.Description;
+            product.Price = model.Price;
+            product.CategoryID = model.CategoryID;
+            product.ImageUrl = imageName;
             _productService.TInsret(product);
+
             return RedirectToAction("Index");
         }
 

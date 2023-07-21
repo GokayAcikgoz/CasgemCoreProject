@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Pizzapan.BusinessLayer.Abstract;
+using Pizzapan.EntityLayer.Concrete;
+using System;
 
 namespace Pizzapan.PresentationLayer.Controllers
 {
@@ -17,6 +19,8 @@ namespace Pizzapan.PresentationLayer.Controllers
             var values = _contactService.TGetList();
             return View(values);
         }
+
+        
 
 
         public IActionResult DeleteContact(int id)

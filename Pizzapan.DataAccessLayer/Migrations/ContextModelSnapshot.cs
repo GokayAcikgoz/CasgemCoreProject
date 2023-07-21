@@ -270,6 +270,36 @@ namespace Pizzapan.DataAccessLayer.Migrations
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("Pizzapan.EntityLayer.Concrete.ContactUs", b =>
+                {
+                    b.Property<int>("ContactUsID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StartEndDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ContactUsID");
+
+                    b.ToTable("ContactUss");
+                });
+
             modelBuilder.Entity("Pizzapan.EntityLayer.Concrete.Discount", b =>
                 {
                     b.Property<int>("DiscountID")
@@ -292,6 +322,24 @@ namespace Pizzapan.DataAccessLayer.Migrations
                     b.HasKey("DiscountID");
 
                     b.ToTable("Discounts");
+                });
+
+            modelBuilder.Entity("Pizzapan.EntityLayer.Concrete.Gallery", b =>
+                {
+                    b.Property<int>("GalleryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("GalleryID");
+
+                    b.ToTable("Galleries");
                 });
 
             modelBuilder.Entity("Pizzapan.EntityLayer.Concrete.OurTeam", b =>
@@ -369,6 +417,27 @@ namespace Pizzapan.DataAccessLayer.Migrations
                     b.HasKey("ProductImageID");
 
                     b.ToTable("ProductImages");
+                });
+
+            modelBuilder.Entity("Pizzapan.EntityLayer.Concrete.SocialMedia", b =>
+                {
+                    b.Property<int>("SocialMediaID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SocialMediaID");
+
+                    b.ToTable("SocialMedias");
                 });
 
             modelBuilder.Entity("Pizzapan.EntityLayer.Concrete.Testimonial", b =>

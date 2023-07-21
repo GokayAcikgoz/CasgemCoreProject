@@ -8,5 +8,15 @@ namespace Pizzapan.PresentationLayer.Controllers
         {
             return View();
         }
+
+        public IActionResult Menu()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
     }
 }

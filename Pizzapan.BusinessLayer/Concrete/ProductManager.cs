@@ -18,6 +18,8 @@ namespace Pizzapan.BusinessLayer.Concrete
             _productDal = productDal;
         }
 
+        
+
         public void TDelete(Product t)
         {
             _productDal.Delete(t);
